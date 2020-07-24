@@ -1,0 +1,56 @@
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-6">
+            <form>
+                <div class="form-group">
+                    <label>Login</label>
+                    <input type="text" class="form-control" [(ngModel)]="login" name="login">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="text" class="form-control" [(ngModel)]="password" name="password">
+                </div>
+                <div class="form-group">
+                    <label>Email address</label>
+                    <input type="text" class="form-control" [(ngModel)]="email" name="email">
+                </div>
+
+            </form>
+            <button *ngIf="!editStatus" type="button" class="btn btn-success col-12" (click)="addUser()">Add
+                user</button>
+            <button *ngIf="editStatus" type="button" class="btn btn-primary col-12" (click)="saveUser()">Save edit
+                user</button>
+
+        </div>
+        <div class="col-6">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Login</th>
+                        <th>Password</th>
+                        <th>Email</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of allUsers; let i=index">
+                        <td>{{i+1}}</td>
+                        <td>{{user.login}}</td>
+                        <td>{{user.password}}</td>
+                        <td>{{user.email}}</td>
+                        <td>
+                            <input type="button" value="edit" class="btn btn-warning" (click)="editUser(user)"
+                                [disabled]="editStatus">
+                        </td>
+                        <td>
+                            <input type="button" value="delete" class="btn btn-danger" (click)="deleteUser(i)"
+                                [disabled]="editStatus">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

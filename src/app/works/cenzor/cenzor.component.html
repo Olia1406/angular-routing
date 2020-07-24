@@ -1,0 +1,11 @@
+<div class="cont">
+    <div [class.badW]="true"><h5>Bad words:</h5><div [class]="'bwList'"><h5>{{prohbList}}</h5></div></div>
+    <div class="addWord">
+        <input type="text" placeholder={{inpPlchTxt}} [class]="inpClass" [class.redBd] = "checker"  [(ngModel)]="prohbWord" name="prohbWord">
+        <button type="button" class="btn btn-warning m-1 add" (click)="add()">Add</button>
+        <button type="button" class="btn btn-danger m-1 reset" (click)="reset()">Reset</button>
+    </div>
+    <textarea name="" id="area"  placeholder={{areaPlchTxt}} class="form-control" [(ngModel)]="areaTxt" name="areaTxt" [class.redBd] = "areaChecker" ></textarea>
+    <button type="button" class="btn btn-success m-1 cenzor" (click)="cenzor()">Cenzor</button>
+</div>
+

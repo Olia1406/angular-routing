@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link text-dark">Last works >>></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="[ 'cenzor' ]" routerLinkActive="active text-success">Cenzor</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="[ 'userslist' ]" routerLinkActive="active text-success">Users</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="[ 'taskslist' ]" routerLinkActive="active text-success">Tasks</a>
+        </li>
+        <li class=" nav-item ml-auto">
+            <a class=" nav-link text-danger" [routerLink]="[ '/home' ]" routerLinkActive="text-danger">Back to >>>
+                Home</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <router-outlet></router-outlet>
+    </div>
